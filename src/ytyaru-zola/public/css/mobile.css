@@ -1,0 +1,7 @@
+@charset "utf-8";
+html,body {
+    font-size: 5vw;
+}
+p,li,th,td,pre,code,kbd,summary  {
+    font-size: 1rem;
+}

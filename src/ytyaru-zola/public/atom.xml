@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+	<title>ytyaru-zola</title>
+	<subtitle>静的サイトジェネレータ&lt;code&gt;zola&lt;&#x2F;code&gt;について書きなぐる。自作テンプレートも配布する。</subtitle>
+	<link href="https://example.com/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://example.com"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-07-31T10:00:00+00:00</updated>
+	<id>https://example.com/atom.xml</id>
+	<entry xml:lang="ja">
+		<title>第三の記事タイトル</title>
+		<published>2021-07-31T10:00:00+00:00</published>
+		<updated>2021-07-31T10:00:00+00:00</updated>
+		<link href="https://example.com/blog/20210731100000/" type="text/html"/>
+		<id>https://example.com/blog/20210731100000/</id>
+		<content type="html">&lt;p&gt;　第三の記事の本文です。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;taitoru&quot;&gt;タイトル&lt;&#x2F;h1&gt;
+&lt;p&gt;　なんちゃら。&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="ja">
+		<title>第二の記事タイトル</title>
+		<published>2021-07-30T10:00:00+00:00</published>
+		<updated>2021-07-30T10:00:00+00:00</updated>
+		<link href="https://example.com/blog/20210730100000/" type="text/html"/>
+		<id>https://example.com/blog/20210730100000/</id>
+		<content type="html">&lt;p&gt;　第二の記事の本文です。&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="ja">
+		<title>blogの記事タイトル</title>
+		<published>2021-07-29T09:00:00+00:00</published>
+		<updated>2021-07-29T09:00:00+00:00</updated>
+		<link href="https://example.com/blog/20210729100000/" type="text/html"/>
+		<id>https://example.com/blog/20210729100000/</id>
+		<content type="html">&lt;p&gt;　blogの記事の本文です。&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

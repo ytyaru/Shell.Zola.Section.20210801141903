@@ -1,0 +1,36 @@
+# https://www.getzola.org/documentation/getting-started/configuration/
+
+base_url = "https://example.com"
+compile_sass = true
+build_search_index = true
+generate_feed = true
+feed_filename = "atom.xml"
+#paginate_by = 30
+#insert_anchor_links = "left"
+#minify_html = false
+#ignored_content = []
+
+default_language = "ja"
+title = "ytyaru-zola"
+description = "静的サイトジェネレータ<code>zola</code>について書きなぐる。自作テンプレートも配布する。"
+#theme = ""
+insert_anchor_links = "left"
+
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
+
+[search]
+include_title = true
+include_description = true
+include_content = true
+include_path = false
+
+[slugify]
+paths = "safe"
+taxonomies = "on"
+anchors = "on"
+
+[extra]
+author = "ytyaru"
+

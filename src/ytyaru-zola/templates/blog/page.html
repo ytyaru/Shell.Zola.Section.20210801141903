@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }} | {{ config.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<meta name="author" content="{{ config.extra.author }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../css/mobile.css" type="text/css" media="screen and (max-width: 899px)">
+<link rel="stylesheet" href="../../css/pc.css" type="text/css" media="screen and (min-width: 900px)">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+{#<header><nav><ul><li><a href=""></a></li></ul><nav></header>#}
+<main><article><h1>{{ page.title }}</h1><p>{{ page.description }}</p>{{ page.content | safe }}</article>bbbbbbbbbbbbb</main>
+<aside>
+<nav class="pagination">
+{% if page.earlier %}<a class="previous" href="{{ page.earlier.permalink }}">‹ {{ page.earlier.title }}</a>{% endif %}
+{% if page.earlier and page.later %}　{% endif %}
+{% if page.later %}<a class="next" href="{{ page.later.permalink }}">{{ page.later.title }} ›</a>{% endif %}
+</nav></aside>
+<aside><!-- ad --></aside>
+<footer>© 2021 {{ config.extra.author }}</footer>
+</body>
+</html>

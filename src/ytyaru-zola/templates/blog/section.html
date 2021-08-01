@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ section.title }} | {{ config.title }}</title>
+<meta name="description" content="{{ section.description }}">
+<meta name="author" content="{{ config.extra.author }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- default url ./blog/-->
+<link rel="stylesheet" href="../css/mobile.css" type="text/css" media="screen and (max-width: 899px)">
+<link rel="stylesheet" href="../css/pc.css" type="text/css" media="screen and (min-width: 900px)">
+<!-- pagginator url ./blog/page/2/-->
+<link rel="stylesheet" href="../../../css/mobile.css" type="text/css" media="screen and (max-width: 899px)">
+<link rel="stylesheet" href="../../../css/pc.css" type="text/css" media="screen and (min-width: 900px)">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+{#<header><nav><ul><li><a href=""></a></li></ul><nav></header>#}
+{#<main><article><section><h1>{{ section.title }}</h1><p>{{ section.description }}</p></section></article></main>#}
+<main>
+<h1>{{ section.title }}</h1>
+{% set_global page_num = 0 %}
+{% set_global word_count = 0 %}
+{% for page in section.pages %}
+{% set_global page_num = page_num + 1 %}
+{% set_global word_count = word_count + page.word_count %}
+{% endfor %}
+{{ section.pages | length }}記事
+{{ page_num }}記事
+{{ word_count }}字
+{% set first_page = section.pages | first %}
+{% set last_page = section.pages | last %}
+{#{{ last_page.date | date(format="%Y-%m-%d", timezone="Asia/Tokyo") }}〜{{ first_page.date | date(format="%Y-%m-%d", timezone="Asia/Tokyo") }}#}
+<ul>
+{% for page in section.pages %}
+<li><time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d", timezone="Asia/Tokyo") }}</time> <a href="{{ page.permalink }}">{{ page.title }}</a> <span>{{ page.description | truncate(length=100) }}</span> <span>{{page.reading_time}}分</span> <span>{{page.word_count}}字</span></li>
+{% endfor %}
+</ul>
+
+
+{#
+{{ paginator.total_pages }}記事です。
+<ul>
+{% for page in paginator.pages %}
+<li><time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d", timezone="Asia/Tokyo") }}</time> <a href="{{ page.permalink }}">{{ page.title }}</a> <span>{{page.reading_time}}分</span> <span>{{page.word_count}}字</span></li>
+{% endfor %}
+</ul>
+<nav class="pagination">
+    {% if paginator.previous %}
+        <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+    {% endif %}
+    {% if paginator.next %}
+        <a class="next" href="{{ paginator.next }}">Next ›</a>
+    {% endif %}
+</nav>
+#}
+
+</main>
+<aside><!-- ad --></aside>
+<footer>© 2021 {{ config.extra.author }}</footer>
+</body>
+</html>
